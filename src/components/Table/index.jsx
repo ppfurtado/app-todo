@@ -5,7 +5,7 @@ import "./style.css";
 const allTask = [
   {
     id: 1,
-    name: "buy",
+    name: "buy meat",
     status: "Todo",
   },
   {
