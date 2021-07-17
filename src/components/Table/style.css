@@ -1,0 +1,14 @@
+.Wrapper table {
+  width: 600px;
+  height: 400px;
+  border-collapse: collapse;
+}
+
+th {
+  border-bottom: 2px solid #000;
+}
+
+td,
+th {
+  border-bottom: 1px solid #ddd;
+}
