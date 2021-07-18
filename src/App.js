@@ -1,11 +1,17 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Table from "./components/Table";
+import AddTask from "./components/AddTask";
+import Home from "./components/Home";
 
 function App() {
   return (
     <div className="App">
-      <h1>TODO List App</h1>
-      <Table />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/add-task" element={<AddTask />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
