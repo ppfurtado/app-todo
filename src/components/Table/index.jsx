@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { ReactComponent as IconDelete } from "../../assets/edit.svg";
 
 import "./style.css";
 
@@ -34,7 +36,11 @@ const Table = () => {
               <td> {task.id} </td>
               <td>{task.name}</td>
               <td>{task.status}</td>
-              <td>Editar</td>
+              <td>
+                <Link to={`/edit-task/${task.id}`}>
+                  <IconDelete width="20px" />
+                </Link>
+              </td>
               <td>Remove</td>
             </tr>
           ))}
