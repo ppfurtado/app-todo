@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ReactComponent as IconDelete } from "../../assets/edit.svg";
+import { ReactComponent as IconEdit } from "../../assets/edit.svg";
+import { ReactComponent as IconDelete } from "../../assets/delete.svg";
 
 import "./style.css";
 
@@ -16,6 +17,13 @@ const Table = () => {
     }
     getTasks();
   }, []);
+
+  const handleDelete = async (id) => {
+    fetch(`http://localhost:4000/tasks/${id}`, {
+      method: "DELETE",
+    });
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
 
   if (tasks === null) return null;
   return (
@@ -38,10 +46,16 @@ const Table = () => {
               <td>{task.status}</td>
               <td>
                 <Link to={`/edit-task/${task.id}`}>
-                  <IconDelete width="20px" />
+                  <IconEdit width="20px" />
                 </Link>
               </td>
-              <td>Remove</td>
+              <td>
+                <IconDelete
+                  width="20px"
+                  height="30px"
+                  onClick={() => handleDelete(task.id)}
+                />
+              </td>
             </tr>
           ))}
         </tbody>
