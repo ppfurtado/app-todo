@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+import "./style.css";
+
 const AddTask = () => {
   const [inputValue, setInputValue] = React.useState("");
   const [options, setOption] = React.useState("");
@@ -38,7 +40,7 @@ const AddTask = () => {
   };
 
   return (
-    <div>
+    <div className="Wrapper">
       <form onSubmit={handleSubmit}>
         <label htmlFor="">
           <span>Task</span>{" "}

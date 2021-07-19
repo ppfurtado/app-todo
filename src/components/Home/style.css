@@ -1,0 +1,18 @@
+.Home header {
+  padding: 20px 0;
+}
+
+.Home main {
+  margin-top: 100px;
+  position: relative;
+}
+
+.Button {
+  position: absolute;
+  right: 0;
+  top: -40px;
+}
+.Link {
+  padding: 5px 8px;
+  background: red;
+}
