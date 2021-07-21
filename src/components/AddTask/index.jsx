@@ -5,7 +5,7 @@ import "./style.css";
 
 const AddTask = () => {
   const [inputValue, setInputValue] = React.useState("");
-  const [options, setOption] = React.useState("");
+  const [options, setOption] = React.useState("todo");
 
   const navigate = useNavigate();
 
@@ -25,6 +25,10 @@ const AddTask = () => {
     if (inputValue === "") {
       return alert("Insira a task ");
     }
+    if (options === "") {
+      setOption("todo");
+    }
+    console.log("OPTIONS", options);
     alert("Um nome foi enviado: ");
     fetch("http://localhost:4000/tasks", {
       method: "POST",
@@ -40,7 +44,7 @@ const AddTask = () => {
   };
 
   return (
-    <div className="Wrapper">
+    <div className="WrapperAddTask">
       <form onSubmit={handleSubmit}>
         <label htmlFor="">
           <span>Task</span>{" "}

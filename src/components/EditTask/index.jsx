@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
+import "./style.css";
+
 const EditTask = () => {
   const { id } = useParams();
   console.log(id);
@@ -16,8 +18,6 @@ const EditTask = () => {
       setInputValue(name);
       setOption(status);
       console.log(name, status);
-      // inputValue(name);
-      // options(status);
     }
     getData();
   }, [id]);
@@ -53,7 +53,7 @@ const EditTask = () => {
   };
 
   return (
-    <div>
+    <div className="WrapperEditTask">
       <form onSubmit={handleSubmit}>
         <label htmlFor="">
           <span>Task</span>{" "}

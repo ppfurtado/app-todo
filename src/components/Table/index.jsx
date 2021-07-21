@@ -11,6 +11,7 @@ const Table = () => {
   React.useEffect(() => {
     async function getTasks() {
       const data = await fetch("http://localhost:4000/tasks");
+      // const data = await fetch("http://localhost:8080/api/v1/tasks");
       const json = await data.json();
       console.log(json);
       setTasks(json);
